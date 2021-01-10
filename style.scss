@@ -1,0 +1,56 @@
+$side-bar-small-gray: #333333;
+$side-bar-large-gray: #252526;
+$main-document-dark: #1e1e1e;
+$selection-hover: #1e1e1e;
+$primary-azul: #007acc;
+$tab-color: #2d2d2d;
+$icon-gray: #646464;
+$side-bar-small-width: 70px;
+
+
+body {
+    background-color: $main-document-dark
+}
+
+#side-bar-small {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: $side-bar-small-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $side-bar-small-gray;
+
+    & > div {
+        // background-color: pink;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+
+        div.icon {
+            width: 100%;
+            height: $side-bar-small-width;
+            // background-color: green;
+            margin: 2px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+            color: $icon-gray;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+        }
+
+        div.icon.selected, div.icon:hover {
+            color: white;
+        }
+
+        div.icon.selected {
+            border-left: 3px solid white;
+            border-right: 3px solid transparent;
+        }
+    }
+}
