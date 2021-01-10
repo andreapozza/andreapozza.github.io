@@ -6,10 +6,15 @@ $primary-azul: #007acc;
 $tab-color: #2d2d2d;
 $icon-gray: #646464;
 $side-bar-small-width: 70px;
+$title-gray: #bbbbbb;
 
+* {
+    padding: 0;
+    margin: 0;
+}
 
 body {
-    background-color: $main-document-dark
+    background-color: $main-document-dark;
 }
 
 #side-bar-small {
@@ -52,5 +57,25 @@ body {
             border-left: 3px solid white;
             border-right: 3px solid transparent;
         }
+    }
+}
+
+#side-expandable {
+    // position: relative;
+    width: 300px;
+    background-color: $side-bar-large-gray;
+    height: 100vh;
+    margin-left: $side-bar-small-width;
+    color: white;
+    display: none;
+    &.expanded {
+        display: block;
+    }
+    p.title {
+        padding: 1em 2em;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        font-size: .8em;
+        color: $title-gray;
     }
 }
