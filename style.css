@@ -4,7 +4,16 @@
 }
 
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: #1e1e1e;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 #side-bar-small {
@@ -45,7 +54,7 @@ body {
 }
 
 #side-expandable {
-  width: 300px;
+  width: 100%;
   background-color: #252526;
   height: 100vh;
   margin-left: 70px;

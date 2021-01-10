@@ -14,7 +14,16 @@ $title-gray: #bbbbbb;
 }
 
 body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     background-color: $main-document-dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+html {
+    height: -webkit-fill-available;
 }
 
 #side-bar-small {
@@ -62,7 +71,7 @@ body {
 
 #side-expandable {
     // position: relative;
-    width: 300px;
+    width: 100%;
     background-color: $side-bar-large-gray;
     height: 100vh;
     margin-left: $side-bar-small-width;
