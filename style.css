@@ -44,7 +44,7 @@ body {
 #side-bar-small > div div.icon.selected {
   color: white;
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   #side-bar-small > div div.icon:hover {
     color: white;
   }
