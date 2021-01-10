@@ -136,3 +136,8 @@ body {
 .icon-php::before {
     @include icon-style("icons/php.svg")
 }
+
+
+.pointer {
+    cursor: pointer;
+}
