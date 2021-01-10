@@ -19,6 +19,7 @@ html {
 
 body {
     background-color: $main-document-dark;
+    padding-left: $side-bar-small-width;
 }
 
 #side-bar-small {
@@ -70,22 +71,68 @@ body {
     }
 }
 
+#main {
+    display: flex;
+}
+
 #side-expandable {
-    // position: relative;
-    width: 100%;
+    min-width: 200px;
     background-color: $side-bar-large-gray;
     height: 100vh;
-    margin-left: $side-bar-small-width;
     color: white;
     display: none;
     &.expanded {
         display: block;
     }
-    p.title {
-        padding: 1em 2em;
+    .title {
         text-transform: uppercase;
-        font-family: sans-serif;
-        font-size: .8em;
-        color: $title-gray;
     }
+}
+
+.title {
+    padding: 1em 2em;
+    font-family: sans-serif;
+    font-size: .8em;
+    color: $title-gray;
+}
+
+#right-side {
+    // border: 1px dashed white;
+    width: 100vw;
+    #tabs {
+        display: flex;
+        background-color: $side-bar-large-gray;
+
+        div {
+            border-right: 1px solid $main-document-dark;
+            background-color: $main-document-dark;
+            position: relative;
+        }
+
+        div:not(.selected) {
+            color: rgb(92, 92, 92);
+            background-color: $tab-color;
+        }
+    }
+}
+
+@mixin icon-style($url) {
+    $size: 13px;
+    content: "";
+    position: absolute;
+    top: 13.5px;
+    left: 10px;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $size;
+    width: $size;
+    height: $size;
+}
+
+.icon-js::before {
+    @include icon-style("icons/js.svg")
+}
+.icon-php::before {
+    @include icon-style("icons/php.svg")
 }

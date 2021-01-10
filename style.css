@@ -9,6 +9,7 @@ html {
 
 body {
   background-color: #1e1e1e;
+  padding-left: 70px;
 }
 
 #side-bar-small {
@@ -53,23 +54,72 @@ body {
   }
 }
 
+#main {
+  display: flex;
+}
+
 #side-expandable {
-  width: 100%;
+  min-width: 200px;
   background-color: #252526;
   height: 100vh;
-  margin-left: 70px;
   color: white;
   display: none;
 }
 #side-expandable.expanded {
   display: block;
 }
-#side-expandable p.title {
-  padding: 1em 2em;
+#side-expandable .title {
   text-transform: uppercase;
+}
+
+.title {
+  padding: 1em 2em;
   font-family: sans-serif;
   font-size: 0.8em;
   color: #bbbbbb;
+}
+
+#right-side {
+  width: 100vw;
+}
+#right-side #tabs {
+  display: flex;
+  background-color: #252526;
+}
+#right-side #tabs div {
+  border-right: 1px solid #1e1e1e;
+  background-color: #1e1e1e;
+  position: relative;
+}
+#right-side #tabs div:not(.selected) {
+  color: #5c5c5c;
+  background-color: #2d2d2d;
+}
+
+.icon-js::before {
+  content: "";
+  position: absolute;
+  top: 13.5px;
+  left: 10px;
+  background-image: url("icons/js.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px;
+  width: 13px;
+  height: 13px;
+}
+
+.icon-php::before {
+  content: "";
+  position: absolute;
+  top: 13.5px;
+  left: 10px;
+  background-image: url("icons/php.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px;
+  width: 13px;
+  height: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */
