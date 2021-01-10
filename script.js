@@ -1,12 +1,15 @@
 var sidebarIcons = document.querySelectorAll("#side-bar-small .top .icon");
 var _loop_1 = function (icon) {
     icon.onclick = function () {
+        var expandableSection = document.getElementById('side-expandable');
+        var expandableSectionTitle = expandableSection.querySelector('p.title');
         if (icon.classList.contains('selected'))
-            document.getElementById('side-expandable').classList.toggle('expanded');
+            expandableSection.classList.toggle('expanded');
         else
-            document.getElementById('side-expandable').classList.add('expanded');
+            expandableSection.classList.add('expanded');
         sidebarIcons.forEach(function (el) { return el.classList.remove('selected'); }); //remove class 'selected' from every icons
         icon.classList.add('selected');
+        expandableSectionTitle.innerText = icon.dataset.title;
     };
 };
 for (var _i = 0, _a = Array.from(sidebarIcons); _i < _a.length; _i++) {
