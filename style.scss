@@ -54,8 +54,14 @@ body {
             border-right: 3px solid transparent;
         }
 
-        div.icon.selected, div.icon:hover {
+        div.icon.selected {
             color: white;
+        }
+        
+        @media (hover: hover) {
+            div.icon:hover {
+                color: white;
+            }
         }
 
         div.icon.selected {

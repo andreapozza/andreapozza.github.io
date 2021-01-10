@@ -41,8 +41,13 @@ body {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
 }
-#side-bar-small > div div.icon.selected, #side-bar-small > div div.icon:hover {
+#side-bar-small > div div.icon.selected {
   color: white;
+}
+@media (hover: hover) {
+  #side-bar-small > div div.icon:hover {
+    color: white;
+  }
 }
 #side-bar-small > div div.icon.selected {
   border-left: 3px solid white;
