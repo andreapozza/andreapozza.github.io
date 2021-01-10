@@ -13,17 +13,12 @@ $title-gray: #bbbbbb;
     margin: 0;
 }
 
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    background-color: $main-document-dark;
+html {
     position: fixed;
-    top: 0;
-    left: 0;
 }
 
-html {
-    height: -webkit-fill-available;
+body {
+    background-color: $main-document-dark;
 }
 
 #side-bar-small {
@@ -65,6 +60,12 @@ html {
         div.icon.selected {
             border-left: 3px solid white;
             border-right: 3px solid transparent;
+        }
+    }
+
+    @media (max-width: 500px) { 
+        & > div:nth-child(2){
+            margin-bottom: 3.5em;
         }
     }
 }

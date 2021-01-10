@@ -3,17 +3,12 @@
   margin: 0;
 }
 
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  background-color: #1e1e1e;
+html {
   position: fixed;
-  top: 0;
-  left: 0;
 }
 
-html {
-  height: -webkit-fill-available;
+body {
+  background-color: #1e1e1e;
 }
 
 #side-bar-small {
@@ -51,6 +46,11 @@ html {
 #side-bar-small > div div.icon.selected {
   border-left: 3px solid white;
   border-right: 3px solid transparent;
+}
+@media (max-width: 500px) {
+  #side-bar-small > div:nth-child(2) {
+    margin-bottom: 3.5em;
+  }
 }
 
 #side-expandable {
