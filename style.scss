@@ -5,7 +5,7 @@ $selection-hover: #1e1e1e;
 $primary-azul: #007acc;
 $tab-color: #2d2d2d;
 $icon-gray: #646464;
-$side-bar-small-width: 70px;
+$side-bar-small-width: 50px;
 $title-gray: #bbbbbb;
 $unactive-tab-text-gray: rgb(92, 92, 92);
 $code-color-blue: #2b6da0;
@@ -54,7 +54,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.5em;
+            font-size: 1.5em;
             color: $icon-gray;
             border-left: 3px solid transparent;
             border-right: 3px solid transparent;
