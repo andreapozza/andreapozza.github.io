@@ -2,6 +2,8 @@ const sidebarIcons = document.querySelectorAll("#side-bar-small .top .icon")
 const expandableSection = document.getElementById('side-expandable')
 const expandableSectionTitle = expandableSection.querySelector('p.title') as HTMLElement
 const tabs = document.querySelectorAll("#tabs .tab")
+const indexJS = document.getElementById('index-js')
+const indexPHP = document.getElementById('index-php')
 
 for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
     icon.onclick = () => {
@@ -26,6 +28,9 @@ for (let tab of Array.from(tabs) as HTMLElement[]) {
 
         tabs.forEach(el=>el.classList.remove('selected'))
         tab.classList.add('selected')
+
+        Array.from(document.getElementsByClassName('page')).forEach(page => { page.classList.add('hidden') });
+        document.getElementById(tab.dataset.page).classList.remove('hidden')
     }
 }
 

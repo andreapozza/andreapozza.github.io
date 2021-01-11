@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -79,6 +80,7 @@ body {
 
 #right-side {
   width: 100vw;
+  overflow-x: auto;
 }
 #right-side #tabs {
   display: flex;
@@ -92,6 +94,168 @@ body {
 #right-side #tabs div:not(.selected) {
   color: #5c5c5c;
   background-color: #2d2d2d;
+}
+#right-side p {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+#right-side p .keyword-color {
+  color: #2b6da0;
+}
+#right-side p .key-color {
+  color: #7cbfd8;
+}
+#right-side p .value-color {
+  color: #c27d6a;
+}
+#right-side p .number-color {
+  color: #aeb9a9;
+}
+#right-side p .array-color {
+  color: #dcdcc2;
+}
+#right-side p .comment-color {
+  color: #507c3c;
+}
+#right-side p i::before {
+  content: "";
+  border-left: 1px solid #5c5c5c;
+}
+#right-side p:nth-child(1):before {
+  content: "1";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(2):before {
+  content: "2";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(3):before {
+  content: "3";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(4):before {
+  content: "4";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(5):before {
+  content: "5";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(6):before {
+  content: "6";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(7):before {
+  content: "7";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(8):before {
+  content: "8";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(9):before {
+  content: "9";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+  padding-left: 0.6em;
+}
+#right-side p:nth-child(10):before {
+  content: "10";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(11):before {
+  content: "11";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(12):before {
+  content: "12";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(13):before {
+  content: "13";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(14):before {
+  content: "14";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(15):before {
+  content: "15";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(16):before {
+  content: "16";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(17):before {
+  content: "17";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(18):before {
+  content: "18";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(19):before {
+  content: "19";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(20):before {
+  content: "20";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(21):before {
+  content: "21";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(22):before {
+  content: "22";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(23):before {
+  content: "23";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(24):before {
+  content: "24";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
+}
+#right-side p:nth-child(25):before {
+  content: "25";
+  color: #5c5c5c;
+  margin: 0 2em 0 1em;
 }
 
 .icon-js::before {

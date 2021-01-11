@@ -7,6 +7,15 @@ $tab-color: #2d2d2d;
 $icon-gray: #646464;
 $side-bar-small-width: 70px;
 $title-gray: #bbbbbb;
+$unactive-tab-text-gray: rgb(92, 92, 92);
+$code-color-blue: #2b6da0;
+$code-color-blue-light: #7cbfd8;
+$code-color-orange: #c27d6a;
+$code-color-green: #aeb9a9;
+$code-color-yellow: #dcdcc2;
+$code-color-green-dark: #507c3c;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 * {
     padding: 0;
@@ -99,6 +108,7 @@ body {
 #right-side {
     // border: 1px dashed white;
     width: 100vw;
+    overflow-x: auto;
     #tabs {
         display: flex;
         background-color: $side-bar-large-gray;
@@ -110,8 +120,57 @@ body {
         }
 
         div:not(.selected) {
-            color: rgb(92, 92, 92);
+            color: $unactive-tab-text-gray;
             background-color: $tab-color;
+        }
+    }
+
+    p {
+        color: white;
+        font-family: 'Roboto Mono', monospace;
+        font-size: .8em;
+        white-space: nowrap;
+
+        .keyword-color {
+            color: $code-color-blue
+        }
+        .key-color {
+            color: $code-color-blue-light
+        }
+        .value-color {
+            color: $code-color-orange
+        }
+        .number-color {
+            color: $code-color-green
+        }
+        .array-color {
+            color: $code-color-yellow
+        }
+        .comment-color {
+            color: $code-color-green-dark
+        }
+
+        i::before {
+            content: "";
+            border-left: 1px solid $unactive-tab-text-gray;
+        }
+
+        @mixin line-number($num) {
+            content: "#{$num}";
+            color: $unactive-tab-text-gray;
+            margin: 0 2em 0 1em;
+        }
+
+        @for $i from 1 through 9 {
+            &:nth-child(#{$i}):before {
+                @include line-number($i);
+                padding-left: .6em
+            }
+        }
+        @for $i from 10 through 25 {
+            &:nth-child(#{$i}):before {
+                @include line-number($i)
+            }
         }
     }
 }

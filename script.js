@@ -2,6 +2,8 @@ var sidebarIcons = document.querySelectorAll("#side-bar-small .top .icon");
 var expandableSection = document.getElementById('side-expandable');
 var expandableSectionTitle = expandableSection.querySelector('p.title');
 var tabs = document.querySelectorAll("#tabs .tab");
+var indexJS = document.getElementById('index-js');
+var indexPHP = document.getElementById('index-php');
 var _loop_1 = function (icon) {
     icon.onclick = function () {
         if (icon.classList.contains('selected')) {
@@ -24,6 +26,8 @@ var _loop_2 = function (tab) {
     tab.onclick = function () {
         tabs.forEach(function (el) { return el.classList.remove('selected'); });
         tab.classList.add('selected');
+        Array.from(document.getElementsByClassName('page')).forEach(function (page) { page.classList.add('hidden'); });
+        document.getElementById(tab.dataset.page).classList.remove('hidden');
     };
 };
 for (var _b = 0, _c = Array.from(tabs); _b < _c.length; _b++) {
