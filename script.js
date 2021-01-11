@@ -4,6 +4,7 @@ var expandableSectionTitle = expandableSection.querySelector('p.title');
 var tabs = document.querySelectorAll("#tabs .tab");
 var indexJS = document.getElementById('index-js');
 var indexPHP = document.getElementById('index-php');
+var documents = document.getElementsByClassName('document');
 var _loop_1 = function (icon) {
     icon.onclick = function () {
         if (icon.classList.contains('selected')) {
@@ -37,4 +38,28 @@ for (var _b = 0, _c = Array.from(tabs); _b < _c.length; _b++) {
 if (screen.width <= 425) {
     expandableSection.classList.remove("expanded");
     document.querySelectorAll("#side-bar-small .top .icon")[0].classList.remove('selected');
+}
+document.querySelectorAll('div[data-page]').forEach(function (el) {
+    el.onclick = function () { changePage(el.dataset.page); };
+});
+function changePage(page) {
+    for (var _i = 0, _a = [indexJS, indexPHP]; _i < _a.length; _i++) {
+        var content = _a[_i];
+        content.classList.add('hidden');
+    }
+    document.getElementById(page).classList.remove('hidden');
+    for (var _b = 0, _c = Array.from(tabs); _b < _c.length; _b++) {
+        var tab = _c[_b];
+        if (tab.dataset.page == page)
+            tab.classList.add('selected');
+        else
+            tab.classList.remove('selected');
+    }
+    for (var _d = 0, _e = Array.from(documents); _d < _e.length; _d++) {
+        var doc = _e[_d];
+        if (doc.dataset.page == page)
+            doc.classList.add('selected');
+        else
+            doc.classList.remove('selected');
+    }
 }
