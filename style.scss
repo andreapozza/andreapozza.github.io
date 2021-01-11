@@ -1,8 +1,8 @@
 $side-bar-small-gray: #333333;
 $side-bar-large-gray: #252526;
 $main-document-dark: #1e1e1e;
-$selection-hover: #1e1e1e;
-$primary-azul: #007acc;
+$selection-hover: #2e2e2ea8;
+$primary-azul: #007acc81;
 $tab-color: #2d2d2d;
 $icon-gray: #646464;
 $side-bar-small-width: 50px;
@@ -26,6 +26,9 @@ $code-color-green-dark: #507c3c;
 body {
     background-color: $main-document-dark;
     padding-left: $side-bar-small-width;
+    font-family: sans-serif;
+    color: $title-gray;
+    font-size: .8em;
 }
 
 #side-bar-small {
@@ -84,25 +87,26 @@ body {
     overflow: hidden;
 }
 
+.px-1em {
+    padding: 0 1em;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
 #side-expandable {
     min-width: 200px;
     background-color: $side-bar-large-gray;
     height: 100vh;
-    color: white;
     display: none;
     &.expanded {
         display: block;
-    }
-    .title {
-        text-transform: uppercase;
     }
 }
 
 .title {
     padding: 1em 2em;
-    font-family: sans-serif;
-    font-size: .8em;
-    color: $title-gray;
 }
 
 #right-side {
@@ -128,7 +132,6 @@ body {
     p {
         color: white;
         font-family: 'Roboto Mono', monospace;
-        font-size: .8em;
         white-space: nowrap;
 
         .keyword-color {
@@ -213,4 +216,19 @@ body {
 
 .hidden {
     display: none;
+}
+
+.document {
+    height: 2em;
+    display: flex;
+    align-items: center;
+    @extend .pointer;
+
+    &.selected {
+        background-color: $primary-azul;
+    }
+
+    &:hover:not(.selected) {
+        background-color: $selection-hover;
+    }
 }

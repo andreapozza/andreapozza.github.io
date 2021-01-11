@@ -7,6 +7,9 @@
 body {
   background-color: #1e1e1e;
   padding-left: 50px;
+  font-family: sans-serif;
+  color: #bbbbbb;
+  font-size: 0.8em;
 }
 
 #side-bar-small {
@@ -57,25 +60,26 @@ body {
   overflow: hidden;
 }
 
+.px-1em {
+  padding: 0 1em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 #side-expandable {
   min-width: 200px;
   background-color: #252526;
   height: 100vh;
-  color: white;
   display: none;
 }
 #side-expandable.expanded {
   display: block;
 }
-#side-expandable .title {
-  text-transform: uppercase;
-}
 
 .title {
   padding: 1em 2em;
-  font-family: sans-serif;
-  font-size: 0.8em;
-  color: #bbbbbb;
 }
 
 #right-side {
@@ -98,7 +102,6 @@ body {
 #right-side p {
   color: white;
   font-family: "Roboto Mono", monospace;
-  font-size: 0.8em;
   white-space: nowrap;
 }
 #right-side p .keyword-color {
@@ -284,7 +287,7 @@ body {
   height: 13px;
 }
 
-.pointer {
+.pointer, .document {
   cursor: pointer;
 }
 
@@ -306,6 +309,18 @@ body {
 
 .hidden {
   display: none;
+}
+
+.document {
+  height: 2em;
+  display: flex;
+  align-items: center;
+}
+.document.selected {
+  background-color: #007acc81;
+}
+.document:hover:not(.selected) {
+  background-color: #2e2e2ea8;
 }
 
 /*# sourceMappingURL=style.css.map */
