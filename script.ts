@@ -56,3 +56,11 @@ function changePage (page: string) {
     }
 
 }
+
+document.querySelectorAll('span.my-age').forEach((span: HTMLElement) => {
+    const now = Date.now()
+    const birthday = new Date(1994, 6, 16)
+    const dateDiff = new Date(now - birthday.getTime())
+    const age = Math.abs( dateDiff.getUTCFullYear() - 1970 )
+    span.innerText = String(age)
+});

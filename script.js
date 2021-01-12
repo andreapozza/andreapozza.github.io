@@ -56,3 +56,10 @@ function changePage(page) {
             tab.classList.remove('selected');
     }
 }
+document.querySelectorAll('span.my-age').forEach(function (span) {
+    var now = Date.now();
+    var birthday = new Date(1994, 6, 16);
+    var dateDiff = new Date(now - birthday.getTime());
+    var age = Math.abs(dateDiff.getUTCFullYear() - 1970);
+    span.innerText = String(age);
+});
