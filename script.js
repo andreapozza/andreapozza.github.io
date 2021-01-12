@@ -63,3 +63,9 @@ document.querySelectorAll('span.my-age').forEach(function (span) {
     var age = Math.abs(dateDiff.getUTCFullYear() - 1970);
     span.innerText = String(age);
 });
+document.querySelectorAll('p.folder').forEach(function (p) {
+    p.onclick = function () {
+        p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270');
+        p.nextElementSibling.classList.toggle('hidden');
+    };
+});

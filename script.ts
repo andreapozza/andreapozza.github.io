@@ -64,3 +64,10 @@ document.querySelectorAll('span.my-age').forEach((span: HTMLElement) => {
     const age = Math.abs( dateDiff.getUTCFullYear() - 1970 )
     span.innerText = String(age)
 });
+
+document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
+    p.onclick = () => {
+        p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270')
+        p.nextElementSibling.classList.toggle('hidden')
+    }
+})

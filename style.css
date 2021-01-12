@@ -287,11 +287,11 @@ body {
   height: 13px;
 }
 
-.pointer, .document {
+.pointer, .document, .folder {
   cursor: pointer;
 }
 
-.noselect, .document {
+.noselect, .document, .folder {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;

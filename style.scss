@@ -220,6 +220,8 @@ body {
 
 .folder {
     @extend .px-1em;
+    @extend .pointer;
+    @extend .noselect;
     margin-bottom: 5px;
 }
 
