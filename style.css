@@ -60,7 +60,7 @@ body {
   overflow: hidden;
 }
 
-.px-1em {
+.px-1em, .folder {
   padding: 0 1em;
 }
 
@@ -291,7 +291,7 @@ body {
   cursor: pointer;
 }
 
-.noselect {
+.noselect, .document {
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -311,11 +311,14 @@ body {
   display: none;
 }
 
+.folder {
+  margin-bottom: 5px;
+}
+
 .document {
-  height: 2em;
-  display: flex;
-  align-items: center;
+  padding: 0.3em 0;
   outline: none;
+  padding-left: 2em;
 }
 .document:hover {
   background-color: #2e2e2ea8;

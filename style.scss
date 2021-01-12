@@ -218,12 +218,17 @@ body {
     display: none;
 }
 
+.folder {
+    @extend .px-1em;
+    margin-bottom: 5px;
+}
+
 .document {
-    height: 2em;
-    display: flex;
-    align-items: center;
+    padding: .3em 0;
     outline: none;
+    padding-left: 2em;
     @extend .pointer;
+    @extend .noselect;
 
     &:hover {
         background-color: $selection-hover;
