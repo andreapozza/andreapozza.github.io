@@ -19,6 +19,9 @@ for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
             sidebarIcons.forEach(el=>el.classList.remove('selected')) //remove class 'selected' from every icons
             icon.classList.add('selected')
             expandableSectionTitle.innerText = icon.dataset.title
+            expandableSection.querySelectorAll('.content').forEach(content => {
+                content.classList.toggle('hidden', content.id != icon.dataset.title)
+            })
         }
     }
     

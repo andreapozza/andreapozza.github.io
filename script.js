@@ -16,6 +16,9 @@ var _loop_1 = function (icon) {
             sidebarIcons.forEach(function (el) { return el.classList.remove('selected'); }); //remove class 'selected' from every icons
             icon.classList.add('selected');
             expandableSectionTitle.innerText = icon.dataset.title;
+            expandableSection.querySelectorAll('.content').forEach(function (content) {
+                content.classList.toggle('hidden', content.id != icon.dataset.title);
+            });
         }
     };
 };
