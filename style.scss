@@ -222,13 +222,14 @@ body {
     height: 2em;
     display: flex;
     align-items: center;
+    outline: none;
     @extend .pointer;
 
-    &.selected {
-        background-color: $primary-azul;
+    &:hover {
+        background-color: $selection-hover;
     }
 
-    &:hover:not(.selected) {
-        background-color: $selection-hover;
+    &:focus {
+        background-color: $primary-azul;
     }
 }

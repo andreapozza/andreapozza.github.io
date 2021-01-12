@@ -55,9 +55,4 @@ function changePage (page: string) {
         else tab.classList.remove('selected')
     }
 
-    for (let doc of Array.from(documents) as HTMLElement[]) {
-        if (doc.dataset.page == page) doc.classList.add('selected')
-        else doc.classList.remove('selected')
-    }
-
 }

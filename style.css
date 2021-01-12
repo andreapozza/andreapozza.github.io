@@ -315,12 +315,13 @@ body {
   height: 2em;
   display: flex;
   align-items: center;
+  outline: none;
 }
-.document.selected {
-  background-color: #007acc81;
-}
-.document:hover:not(.selected) {
+.document:hover {
   background-color: #2e2e2ea8;
+}
+.document:focus {
+  background-color: #007acc81;
 }
 
 /*# sourceMappingURL=style.css.map */

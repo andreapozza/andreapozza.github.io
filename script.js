@@ -55,11 +55,4 @@ function changePage(page) {
         else
             tab.classList.remove('selected');
     }
-    for (var _d = 0, _e = Array.from(documents); _d < _e.length; _d++) {
-        var doc = _e[_d];
-        if (doc.dataset.page == page)
-            doc.classList.add('selected');
-        else
-            doc.classList.remove('selected');
-    }
 }
