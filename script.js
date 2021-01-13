@@ -66,9 +66,11 @@ document.querySelectorAll('p.folder').forEach(function (p) {
     };
 });
 // GitHub and Codepen external links
-document.querySelectorAll('.document[data-github], .document[data-codepen]').forEach(function (div) {
+document.querySelectorAll('.document[data-github], .document[data-codepen], .document[data-url]').forEach(function (div) {
     if (div.dataset.github)
         div.onclick = function () { window.open("https://github.com/andreapozza/" + div.dataset.github, '_blank'); };
     else if (div.dataset.codepen)
         div.onclick = function () { window.open("https://codepen.io/andreapozza/pen/" + div.dataset.codepen, '_blank'); };
+    else if (div.dataset.url)
+        div.onclick = function () { window.open(div.dataset.url, '_blank'); };
 });
