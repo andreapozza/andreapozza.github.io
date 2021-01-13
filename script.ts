@@ -65,3 +65,9 @@ document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
         p.nextElementSibling.classList.toggle('hidden')
     }
 })
+
+// GitHub external links
+document.querySelectorAll('.document[data-github]').forEach((div: HTMLElement) => {
+    const url: string = "https://github.com/andreapozza/" + div.dataset.github
+    div.onclick = () => { window.open(url, '_blank') }
+})

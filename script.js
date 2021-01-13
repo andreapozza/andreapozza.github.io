@@ -65,3 +65,8 @@ document.querySelectorAll('p.folder').forEach(function (p) {
         p.nextElementSibling.classList.toggle('hidden');
     };
 });
+// GitHub external links
+document.querySelectorAll('.document[data-github]').forEach(function (div) {
+    var url = "https://github.com/andreapozza/" + div.dataset.github;
+    div.onclick = function () { window.open(url, '_blank'); };
+});

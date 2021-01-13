@@ -243,4 +243,14 @@ body {
     &:focus {
         background-color: $primary-azul;
     }
+
+    &[data-github] {
+        position: relative;
+        i.fa-external-link-alt {
+            right: .5em;
+            position: absolute;
+            top: 25%;
+            opacity: 0.2;
+        }
+    }
 }

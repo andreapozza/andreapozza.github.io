@@ -330,5 +330,14 @@ body {
 .document:focus {
   background-color: #007acc81;
 }
+.document[data-github] {
+  position: relative;
+}
+.document[data-github] i.fa-external-link-alt {
+  right: 0.5em;
+  position: absolute;
+  top: 25%;
+  opacity: 0.2;
+}
 
 /*# sourceMappingURL=style.css.map */
