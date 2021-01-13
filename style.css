@@ -311,6 +311,10 @@ body {
   display: none;
 }
 
+.content > div {
+  margin-bottom: 1em;
+}
+
 .folder {
   margin-bottom: 5px;
 }

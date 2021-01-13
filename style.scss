@@ -218,6 +218,10 @@ body {
     display: none;
 }
 
+.content > div {
+    margin-bottom: 1em;
+}
+
 .folder {
     @extend .px-1em;
     @extend .pointer;
