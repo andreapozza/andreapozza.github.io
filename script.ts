@@ -19,7 +19,8 @@ for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
             icon.classList.add('selected')
             expandableSectionTitle.innerText = icon.dataset.title
             expandableSection.querySelectorAll('.content').forEach(content => {
-                content.classList.toggle('hidden', content.id != icon.dataset.title)
+                const id: string = icon.dataset.title.replace(" ", "-")
+                content.classList.toggle('hidden', content.id != id)
             })
         }
     }  

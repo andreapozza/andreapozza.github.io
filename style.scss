@@ -103,11 +103,11 @@ body {
     &.expanded {
         display: block;
     }
+    & > p {
+        padding: 1em;
+    }
 }
 
-.title {
-    padding: 1em 2em;
-}
 
 #right-side {
     // border: 1px dashed white;
@@ -121,6 +121,7 @@ body {
             border-right: 1px solid $main-document-dark;
             background-color: $main-document-dark;
             position: relative;
+            padding: 1em 2em;
         }
 
         div:not(.selected) {
@@ -252,5 +253,18 @@ body {
             top: 25%;
             opacity: 0.2;
         }
+    }
+}
+
+#source-control {
+    padding: 0 1em;
+    button {
+        width: 100%;
+        color: #ffff;
+        background-color: $primary-azul;
+        border: none;
+        border-radius: 0;
+        height: 2.2em;
+        @extend .pointer;
     }
 }

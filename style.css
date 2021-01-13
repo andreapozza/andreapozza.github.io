@@ -77,9 +77,8 @@ body {
 #side-expandable.expanded {
   display: block;
 }
-
-.title {
-  padding: 1em 2em;
+#side-expandable > p {
+  padding: 1em;
 }
 
 #right-side {
@@ -94,6 +93,7 @@ body {
   border-right: 1px solid #1e1e1e;
   background-color: #1e1e1e;
   position: relative;
+  padding: 1em 2em;
 }
 #right-side #tabs div:not(.selected) {
   color: #5c5c5c;
@@ -287,7 +287,7 @@ body {
   height: 13px;
 }
 
-.pointer, .document, .folder {
+.pointer, #source-control button, .document, .folder {
   cursor: pointer;
 }
 
@@ -338,6 +338,18 @@ body {
   position: absolute;
   top: 25%;
   opacity: 0.2;
+}
+
+#source-control {
+  padding: 0 1em;
+}
+#source-control button {
+  width: 100%;
+  color: #ffff;
+  background-color: #007acc81;
+  border: none;
+  border-radius: 0;
+  height: 2.2em;
 }
 
 /*# sourceMappingURL=style.css.map */

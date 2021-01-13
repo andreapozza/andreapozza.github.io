@@ -17,7 +17,8 @@ var _loop_1 = function (icon) {
             icon.classList.add('selected');
             expandableSectionTitle.innerText = icon.dataset.title;
             expandableSection.querySelectorAll('.content').forEach(function (content) {
-                content.classList.toggle('hidden', content.id != icon.dataset.title);
+                var id = icon.dataset.title.replace(" ", "-");
+                content.classList.toggle('hidden', content.id != id);
             });
         }
     };
