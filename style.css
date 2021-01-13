@@ -351,4 +351,15 @@ body {
   height: 2.2em;
 }
 
+@media (min-width: 500px) {
+  #index-js, #index-php {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 768px) {
+  #index-js, #index-php {
+    font-size: 2em;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

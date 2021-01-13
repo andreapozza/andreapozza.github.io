@@ -267,3 +267,15 @@ body {
         @extend .pointer;
     }
 }
+
+
+@media (min-width: 500px) {
+    #index-js, #index-php {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 768px) {
+    #index-js, #index-php {
+        font-size: 2em;
+    }
+}
