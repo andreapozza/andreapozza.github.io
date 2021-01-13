@@ -98,7 +98,6 @@ body {
 #side-expandable {
     min-width: 200px;
     background-color: $side-bar-large-gray;
-    height: 100vh;
     display: none;
     &.expanded {
         display: block;

@@ -71,7 +71,6 @@ body {
 #side-expandable {
   min-width: 200px;
   background-color: #252526;
-  height: 100vh;
   display: none;
 }
 #side-expandable.expanded {
