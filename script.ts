@@ -66,8 +66,8 @@ document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
     }
 })
 
-// GitHub external links
-document.querySelectorAll('.document[data-github]').forEach((div: HTMLElement) => {
-    const url: string = "https://github.com/andreapozza/" + div.dataset.github
-    div.onclick = () => { window.open(url, '_blank') }
+// GitHub and Codepen external links
+document.querySelectorAll('.document[data-github], .document[data-codepen]').forEach((div: HTMLElement) => {
+    if (div.dataset.github) div.onclick = () => { window.open("https://github.com/andreapozza/" + div.dataset.github, '_blank') }
+    else if (div.dataset.codepen) div.onclick = () => { window.open("https://codepen.io/andreapozza/pen/" + div.dataset.codepen, '_blank') }
 })

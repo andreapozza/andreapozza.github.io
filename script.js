@@ -65,8 +65,10 @@ document.querySelectorAll('p.folder').forEach(function (p) {
         p.nextElementSibling.classList.toggle('hidden');
     };
 });
-// GitHub external links
-document.querySelectorAll('.document[data-github]').forEach(function (div) {
-    var url = "https://github.com/andreapozza/" + div.dataset.github;
-    div.onclick = function () { window.open(url, '_blank'); };
+// GitHub and Codepen external links
+document.querySelectorAll('.document[data-github], .document[data-codepen]').forEach(function (div) {
+    if (div.dataset.github)
+        div.onclick = function () { window.open("https://github.com/andreapozza/" + div.dataset.github, '_blank'); };
+    else if (div.dataset.codepen)
+        div.onclick = function () { window.open("https://codepen.io/andreapozza/pen/" + div.dataset.codepen, '_blank'); };
 });

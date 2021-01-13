@@ -330,10 +330,10 @@ body {
 .document:focus {
   background-color: #007acc81;
 }
-.document[data-github] {
+.document[data-github], .document[data-codepen] {
   position: relative;
 }
-.document[data-github] i.fa-external-link-alt {
+.document[data-github] i.fa-external-link-alt, .document[data-codepen] i.fa-external-link-alt {
   right: 0.5em;
   position: absolute;
   top: 25%;
