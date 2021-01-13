@@ -22,26 +22,17 @@ var _loop_1 = function (icon) {
         }
     };
 };
+// small sidebar logic
 for (var _i = 0, _a = Array.from(sidebarIcons); _i < _a.length; _i++) {
     var icon = _a[_i];
     _loop_1(icon);
 }
-var _loop_2 = function (tab) {
-    tab.onclick = function () {
-        tabs.forEach(function (el) { return el.classList.remove('selected'); });
-        tab.classList.add('selected');
-        Array.from(document.getElementsByClassName('page')).forEach(function (page) { page.classList.add('hidden'); });
-        document.getElementById(tab.dataset.page).classList.remove('hidden');
-    };
-};
-for (var _b = 0, _c = Array.from(tabs); _b < _c.length; _b++) {
-    var tab = _c[_b];
-    _loop_2(tab);
-}
+// start shrinked on mobile
 if (screen.width <= 425) {
     expandableSection.classList.remove("expanded");
     document.querySelectorAll("#side-bar-small .top .icon")[0].classList.remove('selected');
 }
+// switch between index.js and index.php pages
 document.querySelectorAll('div[data-page]').forEach(function (el) {
     el.onclick = function () { changePage(el.dataset.page); };
 });
@@ -59,6 +50,7 @@ function changePage(page) {
             tab.classList.remove('selected');
     }
 }
+// auto update my age
 document.querySelectorAll('span.my-age').forEach(function (span) {
     var now = Date.now();
     var birthday = new Date(1994, 6, 16);
@@ -66,6 +58,7 @@ document.querySelectorAll('span.my-age').forEach(function (span) {
     var age = Math.abs(dateDiff.getUTCFullYear() - 1970);
     span.innerText = String(age);
 });
+// open/close folders
 document.querySelectorAll('p.folder').forEach(function (p) {
     p.onclick = function () {
         p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270');

@@ -6,10 +6,9 @@ const indexJS = document.getElementById('index-js')
 const indexPHP = document.getElementById('index-php')
 const documents = document.getElementsByClassName('document')
 
+// small sidebar logic
 for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
     icon.onclick = () => {
-
-
         if(icon.classList.contains('selected')) {
             expandableSection.classList.toggle('expanded')
             icon.classList.remove('selected')
@@ -23,26 +22,16 @@ for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
                 content.classList.toggle('hidden', content.id != icon.dataset.title)
             })
         }
-    }
-    
+    }  
 }
 
-for (let tab of Array.from(tabs) as HTMLElement[]) {
-    tab.onclick = () => {
-
-        tabs.forEach(el=>el.classList.remove('selected'))
-        tab.classList.add('selected')
-
-        Array.from(document.getElementsByClassName('page')).forEach(page => { page.classList.add('hidden') });
-        document.getElementById(tab.dataset.page).classList.remove('hidden')
-    }
-}
-
+// start shrinked on mobile
 if(screen.width <= 425) {
     expandableSection.classList.remove("expanded")
     document.querySelectorAll("#side-bar-small .top .icon")[0].classList.remove('selected')
 }
 
+// switch between index.js and index.php pages
 document.querySelectorAll('div[data-page]').forEach((el: HTMLElement) => {
     el.onclick = () => {changePage(el.dataset.page)}
 })
@@ -60,6 +49,7 @@ function changePage (page: string) {
 
 }
 
+// auto update my age
 document.querySelectorAll('span.my-age').forEach((span: HTMLElement) => {
     const now = Date.now()
     const birthday = new Date(1994, 6, 16)
@@ -68,6 +58,7 @@ document.querySelectorAll('span.my-age').forEach((span: HTMLElement) => {
     span.innerText = String(age)
 });
 
+// open/close folders
 document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
     p.onclick = () => {
         p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270')
