@@ -5,7 +5,11 @@ const tabs = document.querySelectorAll("#tabs .tab")
 const indexJS = document.getElementById('index-js')
 const indexPHP = document.getElementById('index-php')
 const codepenPage = document.getElementById('codepen-page')
+const contactsHTML = document.getElementById('contacts-html')
 const documents = document.getElementsByClassName('document')
+
+//set focus on index.js when page loads
+document.addEventListener('DOMContentLoaded', () => { (document.querySelector('.document[data-page="index-js"]') as HTMLElement).focus() });
 
 // small sidebar logic
 for (let icon of Array.from(sidebarIcons) as HTMLElement[]) {
@@ -39,7 +43,7 @@ document.querySelectorAll('div[data-page]').forEach((el: HTMLElement) => {
 })
 
 function changePage (page: string) {
-    for (let content of [indexJS, indexPHP, codepenPage]) {
+    for (let content of [indexJS, indexPHP, codepenPage, contactsHTML]) {
         content.classList.add('hidden')
     }
     document.getElementById(page).classList.remove('hidden')
@@ -63,7 +67,7 @@ document.querySelectorAll('span.my-age').forEach((span: HTMLElement) => {
 // open/close folders
 document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
     p.onclick = () => {
-        p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270')
+        p.classList.toggle('open')
         p.nextElementSibling.classList.toggle('hidden')
     }
 })

@@ -5,7 +5,10 @@ var tabs = document.querySelectorAll("#tabs .tab");
 var indexJS = document.getElementById('index-js');
 var indexPHP = document.getElementById('index-php');
 var codepenPage = document.getElementById('codepen-page');
+var contactsHTML = document.getElementById('contacts-html');
 var documents = document.getElementsByClassName('document');
+//set focus on index.js when page loads
+document.addEventListener('DOMContentLoaded', function () { document.querySelector('.document[data-page="index-js"]').focus(); });
 var _loop_1 = function (icon) {
     icon.onclick = function () {
         if (icon.classList.contains('selected')) {
@@ -39,7 +42,7 @@ document.querySelectorAll('div[data-page]').forEach(function (el) {
     el.onclick = function () { changePage(el.dataset.page); };
 });
 function changePage(page) {
-    for (var _i = 0, _a = [indexJS, indexPHP, codepenPage]; _i < _a.length; _i++) {
+    for (var _i = 0, _a = [indexJS, indexPHP, codepenPage, contactsHTML]; _i < _a.length; _i++) {
         var content = _a[_i];
         content.classList.add('hidden');
     }
@@ -63,7 +66,7 @@ document.querySelectorAll('span.my-age').forEach(function (span) {
 // open/close folders
 document.querySelectorAll('p.folder').forEach(function (p) {
     p.onclick = function () {
-        p.getElementsByTagName('i')[0].classList.toggle('fa-rotate-270');
+        p.classList.toggle('open');
         p.nextElementSibling.classList.toggle('hidden');
     };
 });

@@ -130,6 +130,10 @@ body {
             background-color: $tab-color;
         }
     }
+    .page {
+        overflow: auto;
+        height: calc(100vh - 50px);
+    }
 
     p {
         color: white;
@@ -143,7 +147,9 @@ body {
             color: $code-color-blue-light
         }
         .value-color {
-            color: $code-color-orange
+            &, & a {
+                color: $code-color-orange;
+            }
         }
         .number-color {
             color: $code-color-green
@@ -154,6 +160,9 @@ body {
         .comment-color {
             color: $code-color-green-dark
         }
+        .sign-color {
+            color: $unactive-tab-text-gray;
+        }
 
         i::before {
             content: "";
@@ -163,7 +172,7 @@ body {
         @mixin line-number($num) {
             content: "#{$num}";
             color: $unactive-tab-text-gray;
-            margin: 0 2em 0 1em;
+            margin: 0 1em;
         }
 
         @for $i from 1 through 9 {
@@ -194,7 +203,7 @@ body {
     height: $size;
 }
 
-$tabs: 'js', 'php', 'codepen';
+$tabs: 'js', 'php', 'codepen', 'html';
 
 @each $tab in $tabs {
     .icon-#{$tab} {
@@ -236,11 +245,38 @@ $tabs: 'js', 'php', 'codepen';
     margin-bottom: 1em;
 }
 
+@mixin hover-selected {
+    outline: none;
+    &:hover {
+        background-color: $selection-hover;
+    }
+
+    &:focus {
+        background-color: $primary-azul;
+    }
+}
+
 .folder {
     @extend .px-1em;
     @extend .pointer;
     @extend .noselect;
-    margin-bottom: 5px;
+    @include hover-selected();
+    padding: .3em 0;
+
+    &:before {
+        display: inline-block;
+        content: "";
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+        background-repeat: no-repeat;
+        background-size: 1em 1em;
+        transform: translateY(.15em);
+        height: 1em;
+        width: 1em;
+    }
+
+    &:not(.open):before{
+        transform: translateY(.15em) rotate(270deg); 
+    }
 }
 
 @for $i from 0 through 2 {
@@ -255,18 +291,10 @@ $tabs: 'js', 'php', 'codepen';
 
 .document {
     padding: .3em 0;
-    outline: none;
     padding-left: 2em;
     @extend .pointer;
     @extend .noselect;
-
-    &:hover {
-        background-color: $selection-hover;
-    }
-
-    &:focus {
-        background-color: $primary-azul;
-    }
+    @include hover-selected();
 
     &[data-github], &[data-codepen], &[data-url] {
         position: relative;
@@ -292,14 +320,19 @@ $tabs: 'js', 'php', 'codepen';
     }
 }
 
+@media (max-width: 500px) {
+    #index-js, #index-php, #contacts-html {
+        font-size: .8em;
+    }
+}
 
 @media (min-width: 500px) {
-    #index-js, #index-php {
-        font-size: 1.5em;
+    #index-js, #index-php, #contacts-html {
+        font-size: 1em;
     }
 }
 @media (min-width: 768px) {
-    #index-js, #index-php {
-        font-size: 2em;
+    #index-js, #index-php, #contacts-html {
+        font-size: 1.5em;
     }
 }
