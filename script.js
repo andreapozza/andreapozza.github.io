@@ -78,6 +78,9 @@ document.querySelectorAll('.document[data-github], .document[data-codepen], .doc
 });
 function changeCodepen(id, title) {
     var iframe = document.querySelector('#codepen-page iframe');
-    iframe.src = "https://codepen.io/andreapozza/embed/" + id;
+    var url = "https://codepen.io/andreapozza/embed/" + id;
+    if (iframe.src == url)
+        return; //prevent unnecessary iframe refresh
+    iframe.src = url;
     document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;" + title.trim();
 }

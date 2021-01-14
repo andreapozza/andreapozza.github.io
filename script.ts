@@ -78,7 +78,9 @@ document.querySelectorAll('.document[data-github], .document[data-codepen], .doc
 function changeCodepen(id: string, title: string) {
     
     const iframe = document.querySelector('#codepen-page iframe') as HTMLIFrameElement
-    iframe.src = "https://codepen.io/andreapozza/embed/" + id
+    const url = "https://codepen.io/andreapozza/embed/" + id
+    if(iframe.src == url) return //prevent unnecessary iframe refresh
+    iframe.src = url
 
     document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;"+title.trim()
 }
