@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 * {
   padding: 0;
@@ -260,6 +261,9 @@ body {
   margin: 0 2em 0 1em;
 }
 
+.icon-js {
+  position: relative;
+}
 .icon-js::before {
   content: "";
   position: absolute;
@@ -272,7 +276,17 @@ body {
   width: 13px;
   height: 13px;
 }
+.icon-js.selected::after, .icon-js:hover::after {
+  content: "×";
+  position: absolute;
+  right: 0.5em;
+  top: 25%;
+  font-size: 1.5em;
+}
 
+.icon-php {
+  position: relative;
+}
 .icon-php::before {
   content: "";
   position: absolute;
@@ -284,6 +298,36 @@ body {
   background-size: 13px;
   width: 13px;
   height: 13px;
+}
+.icon-php.selected::after, .icon-php:hover::after {
+  content: "×";
+  position: absolute;
+  right: 0.5em;
+  top: 25%;
+  font-size: 1.5em;
+}
+
+.icon-codepen {
+  position: relative;
+}
+.icon-codepen::before {
+  content: "";
+  position: absolute;
+  top: 13.5px;
+  left: 10px;
+  background-image: url("icons/codepen.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px;
+  width: 13px;
+  height: 13px;
+}
+.icon-codepen.selected::after, .icon-codepen:hover::after {
+  content: "×";
+  position: absolute;
+  right: 0.5em;
+  top: 25%;
+  font-size: 1.5em;
 }
 
 .pointer, #source-control button, .document, .folder {

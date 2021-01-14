@@ -78,26 +78,26 @@
 
                 <p class="folder"><i class="fas fa-chevron-down"></i> CODEPEN</p>                
                 <div>
-                    <div class="document" tabindex="0" data-codepen="OJRERag">
-                        <i class="fab fa-codepen"></i> Simple Calculator<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="OJRERag" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> Simple Calculator
                     </div>
-                    <div class="document" tabindex="0" data-codepen="dypeVLe">
-                        <i class="fab fa-codepen"></i> MD Previewer (React)<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="dypeVLe" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> MD Previewer (React)
                     </div>
-                    <div class="document" tabindex="0" data-codepen="WNGJQZG">
-                        <i class="fab fa-codepen"></i> Random Quote<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="WNGJQZG" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> Random Quote
                     </div>
-                    <div class="document" tabindex="0" data-codepen="zYKWwyE">
-                        <i class="fab fa-codepen"></i> MD Previewer<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="zYKWwyE" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> MD Previewer
                     </div>
-                    <div class="document" tabindex="0" data-codepen="ExgQMEG">
-                        <i class="fab fa-codepen"></i> Roman Numeral<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="ExgQMEG" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> Roman Numeral
                     </div>
-                    <div class="document" tabindex="0" data-codepen="RwRJvMP">
-                        <i class="fab fa-codepen"></i> Anchor links fix<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="RwRJvMP" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> Anchor links fix
                     </div>
-                    <div class="document" tabindex="0" data-codepen="jOWKBxG">
-                        <i class="fab fa-codepen"></i> Pinch to zoom<i class="fas fa-external-link-alt"></i>
+                    <div class="document" tabindex="0" data-codepen="jOWKBxG" data-page="codepen-page">
+                        <i class="fab fa-codepen"></i> Pinch to zoom
                     </div>
                 </div>
 
@@ -119,11 +119,12 @@
         <section id="right-side">
 
             <div id="tabs">
-                <div class="tab pointer noselect selected icon-js title" data-page="index-js">index.js</div>
+                <div class="tab pointer noselect icon-js title" data-page="index-js">index.js</div>
                 <div class="tab pointer noselect icon-php title" data-page="index-php">index.php</div>
+                <div class="tab pointer noselect selected icon-codepen title" data-page="codepen-page"> &nbsp;Random Quote</div>
             </div>
 
-            <div id="index-js" class="page">
+            <div id="index-js" class="page hidden">
                 <p><span class="keyword-color">const</span> <span class="key-color">me</span> = { </p>
                 <p><i>&nbsp;&nbsp;</i><span class="key-color">fullName:</span> <span class="value-color">"Andrea Pozza"</span>,</p>
                 <p><i>&nbsp;&nbsp;</i><span class="key-color">age:</span> <span class="number-color my-age"></span>, <span class="comment-color">// 16th jul 🎂</span></p>
@@ -168,6 +169,10 @@
                 <p><i>&nbsp;&nbsp;</i><i>&nbsp;&nbsp;</i><span class="value-color">'español'</span></p>
                 <p><i>&nbsp;&nbsp;</i>)</p>
                 <p>];</p>
+            </div>
+            <div id="codepen-page" class="page" style="height: calc(100vh - 50px); min-width: 300px;">
+                <iframe height="100%" width="100%" src="https://codepen.io/andreapozza/embed/WNGJQZG" frameborder="0"></iframe>
+                <!-- <iframe height="100%" width="100%" src="https://codepen.io/andreapozza/embed/RwRJvMP" frameborder="0"></iframe> -->
             </div>
         </section>
     </div>

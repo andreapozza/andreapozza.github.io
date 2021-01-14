@@ -4,6 +4,7 @@ var expandableSectionTitle = expandableSection.querySelector('p.title');
 var tabs = document.querySelectorAll("#tabs .tab");
 var indexJS = document.getElementById('index-js');
 var indexPHP = document.getElementById('index-php');
+var codepenPage = document.getElementById('codepen-page');
 var documents = document.getElementsByClassName('document');
 var _loop_1 = function (icon) {
     icon.onclick = function () {
@@ -38,7 +39,7 @@ document.querySelectorAll('div[data-page]').forEach(function (el) {
     el.onclick = function () { changePage(el.dataset.page); };
 });
 function changePage(page) {
-    for (var _i = 0, _a = [indexJS, indexPHP]; _i < _a.length; _i++) {
+    for (var _i = 0, _a = [indexJS, indexPHP, codepenPage]; _i < _a.length; _i++) {
         var content = _a[_i];
         content.classList.add('hidden');
     }
@@ -71,7 +72,12 @@ document.querySelectorAll('.document[data-github], .document[data-codepen], .doc
     if (div.dataset.github)
         div.onclick = function () { window.open("https://github.com/andreapozza/" + div.dataset.github, '_blank'); };
     else if (div.dataset.codepen)
-        div.onclick = function () { window.open("https://codepen.io/andreapozza/pen/" + div.dataset.codepen, '_blank'); };
+        div.addEventListener('click', function () { changeCodepen(div.dataset.codepen, div.innerText); }); //onclick = 
     else if (div.dataset.url)
         div.onclick = function () { window.open(div.dataset.url, '_blank'); };
 });
+function changeCodepen(id, title) {
+    var iframe = document.querySelector('#codepen-page iframe');
+    iframe.src = "https://codepen.io/andreapozza/embed/" + id;
+    document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;" + title.trim();
+}

@@ -4,6 +4,7 @@ const expandableSectionTitle = expandableSection.querySelector('p.title') as HTM
 const tabs = document.querySelectorAll("#tabs .tab")
 const indexJS = document.getElementById('index-js')
 const indexPHP = document.getElementById('index-php')
+const codepenPage = document.getElementById('codepen-page')
 const documents = document.getElementsByClassName('document')
 
 // small sidebar logic
@@ -38,7 +39,7 @@ document.querySelectorAll('div[data-page]').forEach((el: HTMLElement) => {
 })
 
 function changePage (page: string) {
-    for (let content of [indexJS, indexPHP]) {
+    for (let content of [indexJS, indexPHP, codepenPage]) {
         content.classList.add('hidden')
     }
     document.getElementById(page).classList.remove('hidden')
@@ -70,6 +71,14 @@ document.querySelectorAll('p.folder').forEach((p: HTMLElement) => {
 // GitHub and Codepen external links
 document.querySelectorAll('.document[data-github], .document[data-codepen], .document[data-url]').forEach((div: HTMLElement) => {
     if (div.dataset.github) div.onclick = () => { window.open("https://github.com/andreapozza/" + div.dataset.github, '_blank') }
-    else if (div.dataset.codepen) div.onclick = () => { window.open("https://codepen.io/andreapozza/pen/" + div.dataset.codepen, '_blank') }
+    else if (div.dataset.codepen) div.addEventListener('click', () => { changeCodepen(div.dataset.codepen, div.innerText) }) //onclick = 
     else if (div.dataset.url) div.onclick = () => { window.open(div.dataset.url, '_blank') }
 })
+
+function changeCodepen(id: string, title: string) {
+    
+    const iframe = document.querySelector('#codepen-page iframe') as HTMLIFrameElement
+    iframe.src = "https://codepen.io/andreapozza/embed/" + id
+
+    document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;"+title.trim()
+}

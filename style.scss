@@ -192,11 +192,23 @@ body {
     height: $size;
 }
 
-.icon-js::before {
-    @include icon-style("icons/js.svg")
-}
-.icon-php::before {
-    @include icon-style("icons/php.svg")
+$tabs: 'js', 'php', 'codepen';
+
+@each $tab in $tabs {
+    .icon-#{$tab} {
+        position: relative;
+        
+        &::before {
+            @include icon-style("icons/#{$tab}.svg");
+        }
+        &.selected::after, &:hover::after {
+            content: "×";
+            position: absolute;
+            right: .5em;
+            top: 25%;
+            font-size: 1.5em
+        }
+    }
 }
 
 
