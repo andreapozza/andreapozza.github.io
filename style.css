@@ -318,6 +318,27 @@ body {
   margin-bottom: 5px;
 }
 
+.sub0 {
+  padding-left: 1em;
+}
+.sub0 + div .document {
+  padding-left: 2em;
+}
+
+.sub1 {
+  padding-left: 2em;
+}
+.sub1 + div .document {
+  padding-left: 3em;
+}
+
+.sub2 {
+  padding-left: 3em;
+}
+.sub2 + div .document {
+  padding-left: 4em;
+}
+
 .document {
   padding: 0.3em 0;
   outline: none;

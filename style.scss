@@ -229,6 +229,16 @@ body {
     margin-bottom: 5px;
 }
 
+@for $i from 0 through 2 {
+    .sub#{$i} {
+        $p: 1em + $i;
+        padding-left: $p;
+        & + div .document {
+            padding-left: $p + 1;
+        }
+    }
+}
+
 .document {
     padding: .3em 0;
     outline: none;
