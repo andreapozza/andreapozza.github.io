@@ -115,6 +115,8 @@ body {
     #tabs {
         display: flex;
         background-color: $side-bar-large-gray;
+        white-space: nowrap;
+        overflow: auto;
 
         div {
             border-right: 1px solid $main-document-dark;

@@ -88,6 +88,8 @@ body {
 #right-side #tabs {
   display: flex;
   background-color: #252526;
+  white-space: nowrap;
+  overflow: auto;
 }
 #right-side #tabs div {
   border-right: 1px solid #1e1e1e;
