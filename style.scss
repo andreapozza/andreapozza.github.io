@@ -185,7 +185,7 @@ body {
                 padding-left: .6em
             }
         }
-        @for $i from 10 through 25 {
+        @for $i from 10 through 45 {
             &:nth-child(#{$i}):before {
                 @include line-number($i)
             }
