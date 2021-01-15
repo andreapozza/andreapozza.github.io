@@ -29,6 +29,14 @@ body {
     font-family: sans-serif;
     color: $title-gray;
     font-size: .8em;
+    transition-duration: .2s;
+
+    &.fullscreen {
+        padding-left: 0;
+        #side-bar-small {
+            transform: translateX(-$side-bar-small-width);
+        }
+    }
 }
 
 #side-bar-small {
@@ -41,6 +49,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-color: $side-bar-small-gray;
+    transition-duration: .2s;
 
     & > div {
         // background-color: pink;

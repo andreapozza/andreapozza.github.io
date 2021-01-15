@@ -38,6 +38,16 @@ if (screen.width <= 425) {
     expandableSection.classList.remove("expanded");
     document.querySelectorAll("#side-bar-small .top .icon")[0].classList.remove('selected');
 }
+// shrink small sidebar logic
+document.querySelectorAll('.page').forEach(function (page) {
+    page.onscroll = function (e) {
+        var value = e.target.scrollLeft;
+        var condition = screen.width <= 425 && value > 0;
+        document.body.classList.toggle('fullscreen', condition);
+        if (condition)
+            expandableSection.classList.remove('expanded');
+    };
+});
 // switch between index.js and index.php pages
 document.querySelectorAll('div[data-page]').forEach(function (el) {
     el.onclick = function () { changePage(el.dataset.page); };
@@ -55,6 +65,7 @@ function changePage(page) {
         else
             tab.classList.remove('selected');
     }
+    document.body.classList.remove('fullscreen');
 }
 // auto update my age
 document.querySelectorAll('span.my-age').forEach(function (span) {

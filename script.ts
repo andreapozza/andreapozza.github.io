@@ -38,6 +38,16 @@ if(screen.width <= 425) {
     document.querySelectorAll("#side-bar-small .top .icon")[0].classList.remove('selected')
 }
 
+// shrink small sidebar logic
+document.querySelectorAll('.page').forEach((page: HTMLElement) => {
+    page.onscroll = (e) => {
+        const value = (e.target as HTMLElement).scrollLeft
+        const condition: boolean = screen.width <= 425 && value > 0
+        document.body.classList.toggle('fullscreen', condition)
+        if(condition) expandableSection.classList.remove('expanded')
+    }
+})
+
 // switch between index.js and index.php pages
 document.querySelectorAll('div[data-page]').forEach((el: HTMLElement) => {
     el.onclick = () => {changePage(el.dataset.page)}
@@ -53,6 +63,8 @@ function changePage (page: string) {
         if (tab.dataset.page == page) tab.classList.add('selected')
         else tab.classList.remove('selected')
     }
+
+    document.body.classList.remove('fullscreen')
 
 }
 

@@ -11,6 +11,13 @@ body {
   font-family: sans-serif;
   color: #bbbbbb;
   font-size: 0.8em;
+  transition-duration: 0.2s;
+}
+body.fullscreen {
+  padding-left: 0;
+}
+body.fullscreen #side-bar-small {
+  transform: translateX(-50px);
 }
 
 #side-bar-small {
@@ -23,6 +30,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: #333333;
+  transition-duration: 0.2s;
 }
 #side-bar-small > div {
   width: 100%;
