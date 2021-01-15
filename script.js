@@ -6,6 +6,7 @@ var indexJS = document.getElementById('index-js');
 var indexPHP = document.getElementById('index-php');
 var codepenPage = document.getElementById('codepen-page');
 var contactsHTML = document.getElementById('contacts-html');
+var corriculumPDF = document.getElementById('corriculum-pdf');
 var documents = document.getElementsByClassName('document');
 //set focus on index.js when page loads
 document.addEventListener('DOMContentLoaded', function () { document.querySelector('.document[data-page="index-js"]').focus(); });
@@ -42,7 +43,7 @@ document.querySelectorAll('div[data-page]').forEach(function (el) {
     el.onclick = function () { changePage(el.dataset.page); };
 });
 function changePage(page) {
-    for (var _i = 0, _a = [indexJS, indexPHP, codepenPage, contactsHTML]; _i < _a.length; _i++) {
+    for (var _i = 0, _a = [indexJS, indexPHP, codepenPage, contactsHTML, corriculumPDF]; _i < _a.length; _i++) {
         var content = _a[_i];
         content.classList.add('hidden');
     }

@@ -207,7 +207,7 @@ body {
     height: $size;
 }
 
-$tabs: 'js', 'php', 'codepen', 'html';
+$tabs: 'js', 'php', 'codepen', 'html', 'pdf';
 
 @each $tab in $tabs {
     .icon-#{$tab} {

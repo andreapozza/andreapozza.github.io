@@ -365,6 +365,29 @@ body {
   font-size: 1.5em;
 }
 
+.icon-pdf {
+  position: relative;
+}
+.icon-pdf::before {
+  content: "";
+  position: absolute;
+  top: 13.5px;
+  left: 10px;
+  background-image: url("icons/pdf.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px;
+  width: 13px;
+  height: 13px;
+}
+.icon-pdf.selected::after, .icon-pdf:hover::after {
+  content: "×";
+  position: absolute;
+  right: 0.5em;
+  top: 25%;
+  font-size: 1.5em;
+}
+
 .pointer, #source-control button, .document, .folder {
   cursor: pointer;
 }

@@ -6,6 +6,7 @@ const indexJS = document.getElementById('index-js')
 const indexPHP = document.getElementById('index-php')
 const codepenPage = document.getElementById('codepen-page')
 const contactsHTML = document.getElementById('contacts-html')
+const corriculumPDF = document.getElementById('corriculum-pdf')
 const documents = document.getElementsByClassName('document')
 
 //set focus on index.js when page loads
@@ -43,7 +44,7 @@ document.querySelectorAll('div[data-page]').forEach((el: HTMLElement) => {
 })
 
 function changePage (page: string) {
-    for (let content of [indexJS, indexPHP, codepenPage, contactsHTML]) {
+    for (let content of [indexJS, indexPHP, codepenPage, contactsHTML, corriculumPDF]) {
         content.classList.add('hidden')
     }
     document.getElementById(page).classList.remove('hidden')
