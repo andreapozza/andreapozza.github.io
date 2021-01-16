@@ -22,6 +22,17 @@ $code-color-green-dark: #507c3c;
     margin: 0;
 }
 
+@media (pointer:fine) {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+      
+    ::-webkit-scrollbar-thumb {
+        background: #5555;
+        border-radius: 10px;
+    }
+}
 
 body {
     background-color: $main-document-dark;
