@@ -125,7 +125,7 @@ body.fullscreen #side-bar-small {
 }
 #right-side .page {
   overflow: auto;
-  min-height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
 }
 #right-side p {
   color: white;
