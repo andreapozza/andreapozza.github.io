@@ -102,6 +102,10 @@ body.fullscreen #side-bar-small {
 #side-expandable > p {
   padding: 1em;
 }
+#side-expandable > div {
+  height: calc(100vh - 50px);
+  overflow: auto;
+}
 
 #right-side {
   width: 100vw;

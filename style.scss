@@ -123,11 +123,16 @@ body {
     min-width: 200px;
     background-color: $side-bar-large-gray;
     display: none;
+    
     &.expanded {
         display: block;
     }
     & > p {
         padding: 1em;
+    }
+    & > div {
+        height: calc(100vh - 50px);
+        overflow: auto;
     }
 }
 
