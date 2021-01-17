@@ -22,12 +22,13 @@ body {
   font-family: sans-serif;
   color: #bbbbbb;
   font-size: 0.8em;
-  transition-duration: 0.2s;
 }
 body.fullscreen {
+  transition-duration: 0.5s;
   padding-left: 0;
 }
 body.fullscreen #side-bar-small {
+  transition-duration: 0.5s;
   transform: translateX(-50px);
 }
 

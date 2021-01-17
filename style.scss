@@ -40,11 +40,13 @@ body {
     font-family: sans-serif;
     color: $title-gray;
     font-size: .8em;
-    transition-duration: .2s;
+    // transition-duration: .5s;
 
     &.fullscreen {
+        transition-duration: .5s;
         padding-left: 0;
         #side-bar-small {
+            transition-duration: .5s;
             transform: translateX(-$side-bar-small-width);
         }
     }
@@ -61,7 +63,7 @@ body {
     justify-content: space-between;
     background-color: $side-bar-small-gray;
     transition-duration: .2s;
-
+    
     & > div {
         // background-color: pink;
         width: 100%;
