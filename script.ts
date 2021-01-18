@@ -44,7 +44,10 @@ document.querySelectorAll('.page').forEach((page: HTMLElement) => {
         const value = (e.target as HTMLElement).scrollLeft
         const condition: boolean = screen.width <= 425 && value > 0
         document.body.classList.toggle('fullscreen', condition)
-        if(condition) expandableSection.classList.remove('expanded')
+        if(condition) {
+            expandableSection.classList.remove('expanded')
+            sidebarIcons.forEach(icon=>icon.classList.remove('selected'))
+        }
     }
 })
 

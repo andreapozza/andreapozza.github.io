@@ -44,8 +44,10 @@ document.querySelectorAll('.page').forEach(function (page) {
         var value = e.target.scrollLeft;
         var condition = screen.width <= 425 && value > 0;
         document.body.classList.toggle('fullscreen', condition);
-        if (condition)
+        if (condition) {
             expandableSection.classList.remove('expanded');
+            sidebarIcons.forEach(function (icon) { return icon.classList.remove('selected'); });
+        }
     };
 });
 // switch between index.js and index.php pages
