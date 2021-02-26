@@ -42,19 +42,19 @@
                 <div>
 
                     <div class="document" tabindex="0" data-page="index-js">
-                        <img src="icons/js.svg" alt="js" width="14px" style="vertical-align: bottom;"> index.js
+                        <img src="icons/js.svg" alt="js" style="vertical-align: bottom; width: 14px;"> index.js
                     </div>
                     
                     <div class="document" tabindex="1" data-page="index-php">
-                        <img src="icons/php.svg" alt="php" width="14px" style="vertical-align: bottom;"> index.php
+                        <img src="icons/php.svg" alt="php" style="vertical-align: bottom; width: 14px;"> index.php
                     </div>
 
                     <div class="document" tabindex="0" data-page="contacts-html">
-                        <img src="icons/html.svg" alt="html" width="11px" style="vertical-align: bottom;"> contacts.html
+                        <img src="icons/html.svg" alt="html" style="vertical-align: bottom; width: 11px;;"> contacts.html
                     </div>
 
                     <div class="document" tabindex="0" data-page="corriculum-pdf">
-                        <img src="icons/pdf.svg" alt="html" width="11px" style="vertical-align: bottom;"> corriculum.pdf
+                        <img src="icons/pdf.svg" alt="html" style="vertical-align: bottom; width: 11px;"> corriculum.pdf
                     </div>
     
                     <p class="folder sub1" tabindex="0"> PROJECTS</p>                
@@ -76,55 +76,20 @@
     
                     <p class="folder sub1" tabindex="0"> GITHUB REPOS</p>                
                     <div class="hidden">
-                        <div class="document" tabindex="0" data-github="cristinacabrini.com">
-                            <i class="fab fa-github"></i> cristinacabrini.com <i class="fas fa-external-link-alt"></i>
-                        </div>
-                        <div class="document" tabindex="1" data-github="quickwhatsapp">
-                            <i class="fab fa-github"></i> quickwhatsapp <i class="fas fa-external-link-alt"></i>
-                        </div>
-                        <div class="document" tabindex="2" data-github="homepage-example-valeo">
-                            <i class="fab fa-github"></i> Valeo assignment <i class="fas fa-external-link-alt"></i>
-                        </div>
-                        <div class="document" tabindex="3" data-github="-TEST-Rain-Tonic">
-                            <i class="fab fa-github"></i> [TEST] Rain Tonic <i class="fas fa-external-link-alt"></i>
-                        </div>
+                        <template v-for="(item, i) of githubItems" :key="i">
+                            <div class="document" tabindex="0" :data-codepen="item.code" data-page="codepen-page">
+                                <i class="fab fa-codepen"></i>&nbsp; {{ item.label }}
+                            </div>
+                        </template>
                     </div>
     
                     <p class="folder sub1" tabindex="0"> CODEPEN</p>                
                     <div class="hidden">
-                        <div class="document" tabindex="0" data-codepen="VwmPBOz" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Drum Machine (Vue)
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="eYBZPLN" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> 25 + 5 Clock (React)
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="ZEBWpyj" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> [TEST] King 1
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="ExNKgbM" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> [TEST] King 2 (React) 
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="OJRERag" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Simple Calculator
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="dypeVLe" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> MD Previewer (React)
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="WNGJQZG" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Random Quote
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="zYKWwyE" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> MD Previewer
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="ExgQMEG" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Roman Numeral
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="RwRJvMP" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Anchor links fix
-                        </div>
-                        <div class="document" tabindex="0" data-codepen="jOWKBxG" data-page="codepen-page">
-                            <i class="fab fa-codepen"></i> Pinch to zoom
-                        </div>
+                        <template v-for="(item, i) of codepenItems" :key="i">
+                            <div class="document" tabindex="0" :data-codepen="item.code" data-page="codepen-page">
+                                <i class="fab fa-codepen"></i>&nbsp; {{ item.label }}
+                            </div>
+                        </template>
                     </div>
                 </div>
 
@@ -260,6 +225,38 @@
     </div>
 
 
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        // Create Vue application
+        const app = Vue.createApp({
+            data() {
+                return {
+                    codepenItems: [
+                        {label: 'Drum Machine (Vue)', code: 'VwmPBOz'},
+                        {label: '25 + 5 Clock (React)', code: 'eYBZPLN'},
+                        {label: '[TEST] King 1', code: 'ZEBWpyj'},
+                        {label: '[TEST] King 2 (React)', code: 'ExNKgbM'},
+                        {label: 'Simple Calculator', code: 'OJRERag'},
+                        {label: 'MD Previewer (React)', code: 'dypeVLe'},
+                        {label: 'Random Quote', code: 'WNGJQZG'},
+                        {label: 'MD Previewer', code: 'zYKWwyE'},
+                        {label: 'Roman Numeral', code: 'ExgQMEG'},
+                        {label: 'Anchor links fix', code: 'RwRJvMP'},
+                        {label: 'Pinch to zoom', code: 'jOWKBxG'}
+                    ],
+                    githubItems: [
+                        {label: 'cristinacabrini.com', code: 'cristinacabrini.com'},
+                        {label: 'quickwhatsapp', code: 'quickwhatsapp'},
+                        {label: 'Valeo assignment', code: 'homepage-example-valeo'},
+                        {label: '[TEST] Rain Tonic', code: '-TEST-Rain-Tonic'},
+                    ]
+                }
+            }
+        })
+
+        // Mount Vue application
+        app.mount('#main')
+    </script>
     <script src="script.js"></script>
 </body>
 
