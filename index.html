@@ -77,8 +77,8 @@
                     <p class="folder sub1" tabindex="0"> GITHUB REPOS</p>                
                     <div class="hidden">
                         <template v-for="(item, i) of githubItems" :key="i">
-                            <div class="document" tabindex="0" :data-codepen="item.code" data-page="codepen-page">
-                                <i class="fab fa-codepen"></i>&nbsp; {{ item.label }}
+                            <div class="document" :tabindex="i" :data-github="item.code">
+                                <i class="fab fa-github"></i>&nbsp; {{ item.label }} <i class="fas fa-external-link-alt"></i>
                             </div>
                         </template>
                     </div>
@@ -86,7 +86,7 @@
                     <p class="folder sub1" tabindex="0"> CODEPEN</p>                
                     <div class="hidden">
                         <template v-for="(item, i) of codepenItems" :key="i">
-                            <div class="document" tabindex="0" :data-codepen="item.code" data-page="codepen-page">
+                            <div class="document" :tabindex="i" :data-codepen="item.code" data-page="codepen-page">
                                 <i class="fab fa-codepen"></i>&nbsp; {{ item.label }}
                             </div>
                         </template>
