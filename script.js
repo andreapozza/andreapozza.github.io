@@ -128,7 +128,6 @@ function resizeSidebar(ev) {
             var isOpen = +getComputedStyle(expandableSection).width.replace(/[a-z]+/, '') > 3;
             expandableSection.classList.toggle('expanded', isOpen);
             expandableSection.style.flexBasis = null;
-            expandableSection.style.width = null;
             expandableSection.style.minWidth = null;
             expandableSection.style.flexGrow = null;
             if (!isOpen) {
@@ -145,13 +144,25 @@ function resizeSidebar(ev) {
     resizeElementOnMousemove(ev, expandableSection, offset);
 }
 sideBarHandler.addEventListener('mousedown', function () {
-    sideBarHandler.classList.add('dragging');
-    setCursor('col-resize');
+    sideBarHandler.classList.add('border-active');
+    setCursor('e-resize');
     document.addEventListener('mousemove', resizeSidebar);
 });
 document.addEventListener('mouseup', function () {
-    sideBarHandler.classList.remove('dragging');
+    sideBarHandler.classList.remove('border-active');
     document.removeEventListener('mousemove', resizeSidebar);
     disableSelectableText(false);
     setCursor(null);
+});
+// let timeout: NodeJS.Timeout
+sideBarHandler.addEventListener('mouseenter', function (ev) {
+    var timeout = setTimeout(function () {
+        sideBarHandler.classList.add('border-active');
+    }, 250);
+    sideBarHandler.addEventListener('mouseleave', function (ev) {
+        clearTimeout(timeout);
+        if (ev.buttons)
+            return;
+        sideBarHandler.classList.remove('border-active');
+    }, { once: true });
 });
