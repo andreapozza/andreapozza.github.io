@@ -8,6 +8,7 @@ var codepenPage = document.getElementById('codepen-page');
 var contactsHTML = document.getElementById('contacts-html');
 var corriculumPDF = document.getElementById('corriculum-pdf');
 var documents = document.getElementsByClassName('document');
+var sideBarHandler = document.getElementById("side-bar-handler");
 //set focus on index.js when page loads
 document.addEventListener('DOMContentLoaded', function () { document.querySelector('.document[data-page="index-js"]').focus(); });
 var _loop_1 = function (icon) {
@@ -101,3 +102,56 @@ function changeCodepen(id, title) {
     iframe.src = url;
     document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;" + title.trim();
 }
+// sidebar resize
+function resizeElementOnMousemove(ev, element, offset) {
+    if (offset === void 0) { offset = 0; }
+    element.style.width = ev.clientX + offset + "px";
+}
+function disableSelectableText(status) {
+    if (status === void 0) { status = true; }
+    var all = document.querySelector('*');
+    all.style.userSelect = status ? 'none' : null;
+}
+function setCursor(value) {
+    var all = document.querySelector('*');
+    all.style.cursor = value;
+}
+function resizeSidebar(ev) {
+    disableSelectableText();
+    var minWidth = +getComputedStyle(expandableSection).minWidth.replace(/[a-z]+/, '');
+    var offset = -50;
+    if (ev.clientX < minWidth) {
+        expandableSection.style.flexBasis = '3px';
+        expandableSection.style.minWidth = '3px';
+        expandableSection.style.flexGrow = '0';
+        document.addEventListener('mouseup', function () {
+            var isOpen = +getComputedStyle(expandableSection).width.replace(/[a-z]+/, '') > 3;
+            expandableSection.classList.toggle('expanded', isOpen);
+            expandableSection.style.flexBasis = null;
+            expandableSection.style.width = null;
+            expandableSection.style.minWidth = null;
+            expandableSection.style.flexGrow = null;
+            if (!isOpen) {
+                sidebarIcons.forEach(function (icon) { return icon.classList.remove('selected'); });
+            }
+        }, { once: true });
+        return;
+    }
+    else if (ev.movementX > 0 && ev.clientX > minWidth + 200) {
+        expandableSection.style.flexBasis = null;
+        expandableSection.style.minWidth = null;
+        expandableSection.style.flexGrow = null;
+    }
+    resizeElementOnMousemove(ev, expandableSection, offset);
+}
+sideBarHandler.addEventListener('mousedown', function () {
+    sideBarHandler.classList.add('dragging');
+    setCursor('col-resize');
+    document.addEventListener('mousemove', resizeSidebar);
+});
+document.addEventListener('mouseup', function () {
+    sideBarHandler.classList.remove('dragging');
+    document.removeEventListener('mousemove', resizeSidebar);
+    disableSelectableText(false);
+    setCursor(null);
+});

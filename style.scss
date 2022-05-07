@@ -122,9 +122,25 @@ body {
 }
 
 #side-expandable {
-    min-width: 200px;
+    position: relative;
+    min-width: 170px;
+    width: 200px;
     background-color: $side-bar-large-gray;
     display: none;
+    flex-shrink: 0;
+    overflow: auto;
+
+    #side-bar-handler {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 7px;
+        cursor:col-resize;
+        border-right: 4px solid transparent;
+        &.dragging {
+            border-right: 4px solid $primary-azul;
+        }
+    }
     
     &.expanded {
         display: block;
@@ -347,7 +363,13 @@ $tabs: 'js', 'php', 'codepen', 'html', 'pdf';
         border: none;
         border-radius: 0;
         height: 2.2em;
+        max-width: 250px;
+        display: block;
+        margin-inline: auto;
         @extend .pointer;
+        &:hover {
+            background-color: $code-color-blue;
+        }
     }
 }
 

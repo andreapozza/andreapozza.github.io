@@ -8,6 +8,7 @@ const codepenPage = document.getElementById('codepen-page')
 const contactsHTML = document.getElementById('contacts-html')
 const corriculumPDF = document.getElementById('corriculum-pdf')
 const documents = document.getElementsByClassName('document')
+const sideBarHandler = document.getElementById("side-bar-handler")
 
 //set focus on index.js when page loads
 document.addEventListener('DOMContentLoaded', () => { (document.querySelector('.document[data-page="index-js"]') as HTMLElement).focus() });
@@ -104,3 +105,61 @@ function changeCodepen(id: string, title: string) {
 
     document.querySelector('.tab[data-page="codepen-page"]').innerHTML = "&nbsp;"+title.trim()
 }
+
+// sidebar resize
+
+function resizeElementOnMousemove(ev: MouseEvent, element: HTMLElement, offset = 0) {
+    element.style.width = `${ev.clientX + offset}px`
+}
+
+function disableSelectableText(status = true) {
+    const all = document.querySelector('*') as HTMLElement
+    all.style.userSelect = status ? 'none' : null
+}
+
+function setCursor(value: string) {
+    const all = document.querySelector('*') as HTMLElement
+    all.style.cursor = value
+}
+
+function resizeSidebar(ev: MouseEvent) {
+    disableSelectableText()
+    const minWidth = +getComputedStyle(expandableSection).minWidth.replace(/[a-z]+/, '')
+    const offset = -50
+    if(ev.clientX < minWidth ) {
+        expandableSection.style.flexBasis = '3px'
+        expandableSection.style.minWidth = '3px'
+        expandableSection.style.flexGrow = '0'
+        document.addEventListener('mouseup', () => {
+            const isOpen = +getComputedStyle(expandableSection).width.replace(/[a-z]+/, '') > 3
+            expandableSection.classList.toggle('expanded', isOpen)
+            expandableSection.style.flexBasis = null
+            expandableSection.style.width = null
+            expandableSection.style.minWidth = null
+            expandableSection.style.flexGrow = null
+            if(!isOpen) {
+                sidebarIcons.forEach(icon => icon.classList.remove('selected'))
+            }
+        }, { once: true })
+        return
+    }
+    else if (ev.movementX > 0 && ev.clientX > minWidth + 200) {
+        expandableSection.style.flexBasis = null
+        expandableSection.style.minWidth = null
+        expandableSection.style.flexGrow = null
+
+    }
+    resizeElementOnMousemove(ev, expandableSection, offset)
+}
+
+sideBarHandler.addEventListener('mousedown', function() {
+    sideBarHandler.classList.add('dragging')
+    setCursor('col-resize')
+    document.addEventListener('mousemove', resizeSidebar)
+})
+document.addEventListener('mouseup', function() {
+    sideBarHandler.classList.remove('dragging')
+    document.removeEventListener('mousemove', resizeSidebar)
+    disableSelectableText(false)
+    setCursor(null)
+})
