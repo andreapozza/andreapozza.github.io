@@ -353,6 +353,15 @@ $tabs: 'js', 'php', 'codepen', 'html', 'pdf';
             opacity: 0.2;
         }
     }
+
+    span {
+        white-space: nowrap;
+        display: inline-block;
+        padding-left: 4px;
+        max-width: calc(100% - 50px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
 #source-control {
