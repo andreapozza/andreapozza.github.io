@@ -616,7 +616,6 @@ body.fullscreen #side-bar-small {
 .document span {
   white-space: nowrap;
   display: inline-block;
-  padding-left: 4px;
   max-width: calc(100% - 50px);
   text-overflow: ellipsis;
   overflow: hidden;
