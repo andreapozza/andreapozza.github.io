@@ -55,7 +55,9 @@ deployment:
     - cd $DEPLOY_PATH
 
     # Setup composer
+    - which php &>> "$DEPLOY_LOG"
     - alias php=/opt/cpanel/ea-php84/root/usr/bin/php
     - php -v &>> "$DEPLOY_LOG"
+    - which php &>> "$DEPLOY_LOG"
     - if [ ! -f composer.phar ]; then wget -O - https://getcomposer.org/installer | php &>> "$DEPLOY_LOG"; fi
     - php composer.phar install --no-interaction --ignore-platform-reqs --no-dev &>> "$DEPLOY_LOG"
