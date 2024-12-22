@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    # If .deploy.conf doesn't exist, create it from .deploy.example.conf
+    - |
+      if [ ! -f .deploy.conf ]
+      then
+          cp .deploy.example.conf .deploy.conf
+          exit
+      else
+          source .deploy.conf
+      fi
